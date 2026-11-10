@@ -119,8 +119,9 @@ entryTableArray = \case
     asTable (AnyValue (Value.Table t)) = Just t
     asTable _                          = Nothing
 
-{- | All keys of the table at the given key (or of the whole document for
-an empty path), as single-piece 'Key's.
+{- | The direct (top-level) keys of the given 'TOML' table, as single-piece
+'Key's. Keys of nested tables are not included; to list the keys of a
+subtable, look it up first (e.g. with 'lookupTable').
 
 @since 1.4.0.0
 -}
